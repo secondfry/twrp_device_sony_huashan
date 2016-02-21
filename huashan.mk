@@ -18,15 +18,5 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xhdpi-1024-dalvi
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/init.qcom.rc:root/init.qcom.rc \
-    $(LOCAL_PATH)/rootdir/init.qcom.power.rc:root/init.qcom.power.rc \
-    $(LOCAL_PATH)/rootdir/init.target.rc:root/init.target.rc \
-    $(LOCAL_PATH)/rootdir/fstab.qcom:root/fstab.qcom \
-    $(LOCAL_PATH)/rootdir/fstab.qcom:recovery/root/fstab.qcom \
     $(LOCAL_PATH)/rootdir/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
-    $(LOCAL_PATH)/rootdir/ueventd.qcom.rc:root/ueventd.qcom.rc
-
-# Allows healthd to boot directly from charger mode rather than initiating a reboot.
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.enable_boot_charger_mode=1
-
+    $(LOCAL_PATH)/rootdir/init.target.rc:root/init.target.rc
